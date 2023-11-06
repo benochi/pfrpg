@@ -1,0 +1,123 @@
+[  
+  {
+    "name": "Human",
+    "size": "md",
+    "statModifiers": {
+      "STR": 5,
+      "STA": 5,
+      "DEX": 0,
+      "WIS": 5,
+      "INT": 5,
+      "CHA": 5
+    }
+  },
+  {
+    "name": "Ogre",
+    "size": "lg",
+    "statModifiers": {
+      "STR": 50,
+      "STA": 75,
+      "DEX": -25,
+      "WIS": 25,
+      "INT": -50,
+      "CHA": -50
+    },
+    "specialAbilities": ["stunResistance"]
+  },
+  {
+    "name": "Troll",
+    "size": "lg",
+    "statModifiers": {
+      "STR": 3,
+      "STA": 1,
+      "DEX": -1,
+      "WIS": 0,
+      "INT": -2,
+      "CHA": -1
+    },
+    "specialAbilities": ["fastHealing"]
+  },{
+    "name": "Gnome",
+    "size": "lg",
+    "statModifiers": {
+      "STR": 3,
+      "STA": 1,
+      "DEX": -1,
+      "WIS": 0,
+      "INT": -2,
+      "CHA": -1
+    }
+  },
+  {
+    "name": "Dwarf",
+    "size": "lg",
+    "statModifiers": {
+      "STR": 3,
+      "STA": 1,
+      "DEX": -1,
+      "WIS": 0,
+      "INT": -2,
+      "CHA": -1
+    }
+  },
+  {
+    "name": "Wood Elf",
+    "size": "lg",
+    "statModifiers": {
+      "STR": 3,
+      "STA": 1,
+      "DEX": -1,
+      "WIS": 0,
+      "INT": -2,
+      "CHA": -1
+    }
+  },
+  {
+    "name": "High Elf",
+    "size": "lg",
+    "statModifiers": {
+      "STR": 3,
+      "STA": 1,
+      "DEX": -1,
+      "WIS": 0,
+      "INT": -2,
+      "CHA": -1
+    }
+  },
+  {
+    "name": "Dark Elf",
+    "size": "lg",
+    "statModifiers": {
+      "STR": 3,
+      "STA": 1,
+      "DEX": -1,
+      "WIS": 0,
+      "INT": -2,
+      "CHA": -1
+    }
+  },
+  {
+    "name": "Halfling",
+    "size": "lg",
+    "statModifiers": {
+      "STR": 3,
+      "STA": 1,
+      "DEX": -1,
+      "WIS": 0,
+      "INT": -2,
+      "CHA": -1
+    }
+  },
+  {
+    "name": "Frostborn",
+    "size": "lg",
+    "statModifiers": {
+      "STR": 3,
+      "STA": 1,
+      "DEX": -1,
+      "WIS": 0,
+      "INT": -2,
+      "CHA": -1
+    }
+  }
+]

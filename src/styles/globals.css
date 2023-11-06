@@ -1,0 +1,53 @@
+/* src/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cobalt: 4, 71, 171; /* Cobalt blue in RGB */
+  --color-dark: 0, 0, 0; /* Black in RGB */
+}
+
+html,
+body {
+  @apply bg-gradient-to-br from-black to-cobalt text-white;
+}
+
+@keyframes moveUpwards {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
+
+/* Cube animation for backgrounds */
+.cube {
+  position: absolute;
+  bottom: -100px; 
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  animation: moveUpwards 5s linear infinite;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.cube::before,
+.cube::after {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+  box-shadow: inherit;
+  animation: inherit;
+}
+
+.cube::before {
+  transform: translateX(-100%);
+}
+
+.cube::after {
+  transform: translateX(100%);
+}
