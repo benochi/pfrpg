@@ -121,8 +121,8 @@ const CreateCharacter: React.FC = () => {
               <Image
                 src={getImagePath()}
                 alt="Character Image"
-                width={400} 
-                height={400}
+                width={500} 
+                height={500}
                 priority
               />
             </div>
