@@ -58,7 +58,7 @@ const WarriorBackground: React.FC = () => {
 };
 
 const BardBackground: React.FC = () => {
-  const noteCount = 20; 
+  const noteCount = 40; 
   const notes = Array.from({ length: noteCount }, (_, index) => {
     const style = {
       left: `${Math.random() * 100}%`,
@@ -84,7 +84,7 @@ const BardBackground: React.FC = () => {
 };
 
 const ClericBackground: React.FC = () => {
-  const orbCount = 20;
+  const orbCount = 60;
   const orbs = Array.from({ length: orbCount }, (_, index) => {
     const leftPosition = `calc(${Math.random() * 100}% - 20px)`;
 
@@ -122,6 +122,48 @@ const WizardBackground: React.FC = () => {
   return <>{fireballs}</>;
 };
 
+const MagicianBackground: React.FC = () => {
+  type SizeRange = { min: number; max: number };
+  type DurationRange = { min: number; max: number };
+  
+  const getRandomStyles = (sizeRange: SizeRange, durationRange: DurationRange) => {
+    const size = Math.random() * (sizeRange.max - sizeRange.min) + sizeRange.min;
+    const duration = Math.random() * (durationRange.max - durationRange.min) + durationRange.min;
+    return {
+      width: `${size}px`,
+      height: `${size}px`,
+      animationDuration: `${duration}s`,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * -10}s`, 
+    };
+  };
+
+  const earthElements = Array.from({ length: 10 }, (_, index) => (
+    <div key={`earth-${index}`} className="element element-earth" style={getRandomStyles({ min: 50, max: 150 }, { min: 10, max: 20 })} />
+  ));
+
+  const windElements = Array.from({ length: 10 }, (_, index) => (
+    <div key={`wind-${index}`} className="element element-wind" style={getRandomStyles({ min: 50, max: 150 }, { min: 8, max: 16 })} />
+  ));
+
+  const waterElements = Array.from({ length: 10 }, (_, index) => (
+    <div key={`water-${index}`} className="element element-water" style={getRandomStyles({ min: 50, max: 150 }, { min: 6, max: 12 })} />
+  ));
+
+  const fireElements = Array.from({ length: 10 }, (_, index) => (
+    <div key={`fire-${index}`} className="element element-fire" style={getRandomStyles({ min: 50, max: 150 }, { min: 4, max: 8 })} />
+  ));
+
+  return (
+    <div className="magician-elements">
+      {earthElements}
+      {windElements}
+      {waterElements}
+      {fireElements}
+    </div>
+  );
+};
 
 
 
@@ -137,6 +179,8 @@ const CharacterAnimations: React.FC<CharacterAnimationsProps> = ({ className }) 
       return <ClericBackground />;
     case 'wizard':
       return <WizardBackground />;
+    case 'magician':
+      return <MagicianBackground />;
     default:
       return null; 
   }

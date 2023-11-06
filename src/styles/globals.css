@@ -43,6 +43,11 @@ body {
   }
 }
 
+@keyframes driftAndFade {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(50vw); opacity: 0; }
+}
+
 @keyframes explode {
   from {
     box-shadow: 0 0 8px rgba(255, 69, 0, 0.9);
@@ -61,6 +66,18 @@ body {
     transform: translateY(90vh) rotate(360deg);
     opacity: 0;
   }
+}
+
+@keyframes flickerAndAscend {
+  0% { top: 100vh; opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { top: -150px; opacity: 0; }
+}
+
+@keyframes floatUpwards {
+  0% { transform: translateY(100vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-20vh); opacity: 1; }
 }
 
 @keyframes flyRightAndGrow {
@@ -128,6 +145,12 @@ body {
     transform: scale(4);
     opacity: 0;
   }
+}
+
+@keyframes rotateAndScale {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.5); }
+  100% { transform: rotate(360deg) scale(1); }
 }
 
 @keyframes sparkFly {
@@ -262,4 +285,43 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+
+.element-earth {
+  position: absolute;
+  width: 50px; 
+  height: 50px;
+  background-color: #8B4513;
+  border-radius: 50%;
+  animation: floatUpwards 10s infinite linear;
+}
+
+/* Wind Element Style */
+.element-wind {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #F5F5F5; 
+  border-radius: 50%;
+  animation: driftAndFade 8s infinite ease-in-out;
+}
+
+/* Water Element Style */
+.element-water {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #0000FF; 
+  border-radius: 50%;
+  animation: rotateAndScale 6s infinite linear;
+}
+
+/* Fire Element Style */
+.element-fire {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #FF4500; 
+  border-radius: 50%;
+  animation: flickerAndAscend 4s infinite ease-in-out;
 }
