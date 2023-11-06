@@ -23,6 +23,7 @@ const CreateCharacter: React.FC = () => {
   const [selectedClass, setSelectedClass] = useState<Class | null>(null);
   const [stats, setStats] = useState<StatModifiers>(baseStats);
   const [characterName, setCharacterName] = useState('');
+  const [gender, setGender] = useState<string>('male');
 
 
   useEffect(() => {
@@ -105,6 +106,33 @@ const CreateCharacter: React.FC = () => {
           <div className="lg:w-1/2 w-full flex justify-center items-center">
             <div className="border-4 border-white w-64 h-64">
             </div>
+          </div>
+        </div>
+        <div className="mt-4">
+        <h2 className="text-xl font-bold">Character Gender</h2>
+          <div className="flex gap-4 justify-center items-center">
+            <label className="flex items-center space-x-2">
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                checked={gender === 'male'}
+                onChange={(e) => setGender(e.target.value)}
+                className="accent-cobalt"
+              />
+              <span>Male</span>
+            </label>
+            <label className="flex items-center space-x-2">
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                checked={gender === 'female'}
+                onChange={(e) => setGender(e.target.value)}
+                className="accent-cobalt"
+              />
+              <span>Female</span>
+            </label>
           </div>
         </div>
         <div className="mt-4">
