@@ -9,7 +9,8 @@
       "WIS": 5,
       "INT": 5,
       "CHA": 5
-    }
+    },
+    "specialAbilities": ["Rapid Healing 1", "Poison Resistance"]
   },
   {
     "name": "Ogre",
@@ -22,7 +23,7 @@
       "INT": -50,
       "CHA": -50
     },
-    "specialAbilities": ["stunResistance"]
+    "specialAbilities": ["Stun Resistance", "Infra Vision"]
   },
   {
     "name": "Troll",
@@ -35,7 +36,7 @@
       "INT": -2,
       "CHA": -1
     },
-    "specialAbilities": ["fastHealing"]
+    "specialAbilities": ["Rapid Healing 1", "Poison Resistance"]
   },{
     "name": "Gnome",
     "size": "lg",

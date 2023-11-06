@@ -14,6 +14,8 @@ const baseStats: StatModifiers = {
   CHA: 75
 };
 
+const highlightColor = 'bg-blue-600';
+
 const CreateCharacter: React.FC = () => {
   const [races, setRaces] = useState<Race[]>([]);
   const [classes, setClasses] = useState<Class[]>([]);
@@ -52,7 +54,7 @@ const CreateCharacter: React.FC = () => {
   const handleCharacterNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCharacterName(event.target.value);
   };
-  
+
   return (
     <Layout>
       <div className="container mx-auto px-4">
@@ -62,7 +64,13 @@ const CreateCharacter: React.FC = () => {
             <h2 className="text-xl font-bold">Races</h2>
             <ul>
               {races.map((race, index) => (
-                <li key={index} className="my-2 cursor-pointer" onClick={() => handleRaceSelect(race)}>{race.name}</li>
+                <li 
+                key={index}
+                className={`my-2 cursor-pointer ${selectedRace?.name === race.name ? highlightColor : ''}`}
+                onClick={() => handleRaceSelect(race)}
+                >
+                  {race.name}
+                </li>
               ))}
             </ul>
           </div>
@@ -70,7 +78,13 @@ const CreateCharacter: React.FC = () => {
             <h2 className="text-xl font-bold">Classes</h2>
             <ul>
               {classes.map((cls, index) => (
-                <li key={index} className="my-2 cursor-pointer" onClick={() => handleClassSelect(cls)}>{cls.name}</li>
+                <li
+                key={index}
+                className={`my-2 cursor-pointer ${selectedClass?.name === cls.name ? highlightColor : ''}`}
+                onClick={() => handleClassSelect(cls)}
+              >
+                {cls.name}
+              </li>
               ))}
             </ul>
           </div>
@@ -98,7 +112,7 @@ const CreateCharacter: React.FC = () => {
             id="characterName"
             value={characterName}
             onChange={handleCharacterNameChange}
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm text-black"
+            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm text-black px-2"
             placeholder="Enter your character's name"
           />
           </div>
