@@ -140,19 +140,19 @@ const MagicianBackground: React.FC = () => {
   };
 
   const earthElements = Array.from({ length: 10 }, (_, index) => (
-    <div key={`earth-${index}`} className="element element-earth" style={getRandomStyles({ min: 50, max: 150 }, { min: 10, max: 20 })} />
+    <div key={`earth-${index}`} className="element element-earth" style={getRandomStyles({ min: 5, max: 50 }, { min: 10, max: 20 })} />
   ));
 
   const windElements = Array.from({ length: 10 }, (_, index) => (
-    <div key={`wind-${index}`} className="element element-wind" style={getRandomStyles({ min: 50, max: 150 }, { min: 8, max: 16 })} />
+    <div key={`wind-${index}`} className="element element-wind" style={getRandomStyles({ min: 5, max: 50 }, { min: 10, max: 20 })} />
   ));
 
   const waterElements = Array.from({ length: 10 }, (_, index) => (
-    <div key={`water-${index}`} className="element element-water" style={getRandomStyles({ min: 50, max: 150 }, { min: 6, max: 12 })} />
+    <div key={`water-${index}`} className="element element-water" style={getRandomStyles({ min: 5, max: 50 }, { min: 10, max: 20 })} />
   ));
 
   const fireElements = Array.from({ length: 10 }, (_, index) => (
-    <div key={`fire-${index}`} className="element element-fire" style={getRandomStyles({ min: 50, max: 150 }, { min: 4, max: 8 })} />
+    <div key={`fire-${index}`} className="element element-fire" style={getRandomStyles({ min: 5, max: 50 }, { min: 10, max: 20 })} />
   ));
 
   return (

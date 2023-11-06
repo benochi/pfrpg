@@ -10,7 +10,6 @@
 
 html,
 body {
-  overflow: hidden;
   @apply bg-gradient-to-br from-black to-cobalt text-white;
 }
 
@@ -165,6 +164,13 @@ body {
     transform: translateY(-100vh) scale(1);
     opacity: 0;
   }
+}
+
+.animation-container {
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  height: 100vh; /* Or adjust as needed */
 }
 
 /* Cube animation for backgrounds */
