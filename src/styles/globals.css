@@ -70,6 +70,47 @@ body {
   }
 }
 
+@keyframes fall {
+  0% { transform: translateY(-100vh); } 
+  100% { transform: translateY(200vh); }
+}
+
+@keyframes falling-leaves {
+  0%, 100% { 
+    transform: translateY(-10vh) translateX(0); 
+  }
+  10% {
+    transform: translateY(10vh) translateX(30px); 
+  }
+  20% {
+    transform: translateY(20vh) translateX(-50px); 
+  }
+  30% {
+    transform: translateY(30vh) translateX(10px); 
+  }
+  40% {
+    transform: translateY(40vh) translateX(-20px);
+  }
+  50% {
+    transform: translateY(50vh) translateX(60px); 
+  }
+  60% {
+    transform: translateY(60vh) translateX(-10px); 
+  }
+  70% {
+    transform: translateY(70vh) translateX(40px); 
+  }
+  80% {
+    transform: translateY(80vh) translateX(-30px); 
+  }
+  90% {
+    transform: translateY(90vh) translateX(10px); 
+  }
+  100% {
+    transform: translateY(100vh) translateX(0); 
+  }
+}
+
 @keyframes fallingSnow {
   0% {
     transform: translateY(-10vh) rotate(0deg);
@@ -189,6 +230,11 @@ body {
     transform: translateY(-100vh) scale(1);
     opacity: 0;
   }
+}
+
+@keyframes sway {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); } 
 }
 
 @keyframes swirl {
@@ -400,4 +446,24 @@ body {
   background-color: rgba(255, 192, 203, 0.5); 
   animation: floatAndGlow 20s infinite alternate, swirl 30s infinite linear;
   will-change: transform; 
+}
+
+/* Leaf Style */
+.leaf {
+  position: absolute;
+  width: 15px;
+  height: 20px;
+  background-color: #228B22; 
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: falling-leaves 10s linear infinite;
+}
+
+.druid-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
 }

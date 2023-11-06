@@ -190,6 +190,31 @@ const EnchanterBackground: React.FC = () => {
   return <div className="enchanter-elements">{enchantingElements}</div>;
 };
 
+const DruidBackground: React.FC = () => {
+  const leafCount = 50;
+  const leaves = Array.from({ length: leafCount }, (_, index) => {
+    const size = Math.random() * (20 - 10) + 10;
+    const leftPosition = Math.random() * 100;
+    const animationDelay = `${Math.random() * 5}s`;
+
+    return (
+      <div
+        key={index}
+        className="leaf"
+        style={{
+          width: `${size * 2}px`,
+          height: `${size}px`,
+          left: `${leftPosition}%`,
+          top: `-${size * 2}px`,  
+          animationDelay: animationDelay,
+        }}
+      />
+    );
+  });
+
+  return <div className="druid-elements">{leaves}</div>;
+};
+
 
 const CharacterAnimations: React.FC<CharacterAnimationsProps> = ({ className }) => {
   switch (className.toLowerCase()) {
@@ -207,6 +232,8 @@ const CharacterAnimations: React.FC<CharacterAnimationsProps> = ({ className }) 
       return <MagicianBackground />;
     case 'enchanter':
       return <EnchanterBackground />;
+    case 'druid':
+        return <DruidBackground />;
     default:
       return null; 
   }

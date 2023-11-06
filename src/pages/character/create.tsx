@@ -74,7 +74,7 @@ const CreateCharacter: React.FC = () => {
 
   const getImagePath = () => {
     if (selectedRace && selectedClass && gender) {
-      return `/images/characters/${gender}/${selectedRace.name.toLowerCase()}_${selectedClass.name.toLowerCase()}.png`;
+      return `/images/characters/${gender}/${selectedRace.name.toLowerCase()}_${selectedClass.name.toLowerCase()}.jpg`;
     }
     return '/images/characters/default.png';
   };
@@ -121,8 +121,8 @@ const CreateCharacter: React.FC = () => {
               <Image
                 src={getImagePath()}
                 alt="Character Image"
-                width={200} 
-                height={200}
+                width={400} 
+                height={400}
                 priority
               />
             </div>
