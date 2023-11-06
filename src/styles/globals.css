@@ -10,7 +10,52 @@
 
 html,
 body {
+  overflow: hidden;
   @apply bg-gradient-to-br from-black to-cobalt text-white;
+}
+
+
+@keyframes dance {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20vh) scale(1.2);
+  }
+}
+
+@keyframes explode {
+  from {
+    box-shadow: 0 0 8px rgba(255, 69, 0, 0.9);
+  }
+  to {
+    box-shadow: 0 0 30px 10px rgba(255, 69, 0, 0);
+  }
+}
+
+@keyframes fallingSnow {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(90vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flyRightAndGrow {
+  0% {
+    transform: translateX(-10vw) scale(0.5); /* Start just off-screen to the left */
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(90vw) scale(1.5); /* End just before going off-screen to the right */
+    opacity: 0;
+  }
 }
 
 @keyframes moveUpwards {
@@ -22,13 +67,38 @@ body {
   }
 }
 
-@keyframes fallingSnow {
+@keyframes moveUpAndAccelerate {
   0% {
-    transform: translateY(-10vh) rotate(0deg);
+    transform: translateY(0vh) scale(0.8); /* Start below the screen */
     opacity: 1;
   }
   100% {
-    transform: translateY(90vh) rotate(360deg);
+    transform: translateY(-100vh) scale(1.2); /* End above the screen */
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkFly {
+  0% {
+    transform: translateY(0vh) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
     opacity: 0;
   }
 }
@@ -76,3 +146,51 @@ body {
 }
 
 /* sparks background */
+.spark {
+  position: absolute;
+  bottom: 0;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 215, 0, 0.8); /* Gold color */
+  border-radius: 50%;
+  animation: sparkFly 3s linear infinite;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.9);
+}
+
+/* Musical notes or orbs background for Bard class */
+.note {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* background-color is set inline for randomness */
+}
+
+.orb {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Healing orb background for Cleric class */
+.healing-orb {
+  position: absolute;
+  bottom: 100px; /* Start at the bottom */
+  width: 20px;
+  height: 20px;
+  background-color: #007bff; /* Cleric blue */
+  border-radius: 50%;
+  box-shadow: 0 0 15px #007bff; /* Glowing effect */
+  animation: moveUpAndAccelerate 5s infinite ease-in-out, pulse 2s infinite alternate;
+}
+
+/* Fireball animation for Wizard class */
+.fireball {
+  position: absolute;
+  left: -20px; /* Start off screen */
+  width: 20px;
+  height: 20px;
+  background-color: #ff4500; /* Fireball color */
+  border-radius: 50%;
+  animation: flyRightAndGrow 3s linear infinite, explode 0.5s ease-in-out infinite;
+  animation-delay: var(--fly-delay), var(--explode-delay);
+}
