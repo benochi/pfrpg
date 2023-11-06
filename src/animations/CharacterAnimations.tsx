@@ -166,7 +166,7 @@ const MagicianBackground: React.FC = () => {
 };
 
 const EnchanterBackground: React.FC = () => {
-  const enchantingElements = Array.from({ length: 15 }, (_, index) => {
+  const enchantingElements = Array.from({ length: 60 }, (_, index) => {
     const size = Math.random() * (150 - 50) + 50; 
     const animationDuration = Math.random() * (30 - 15) + 15; 
     const delay = Math.random() * -10; 
