@@ -10,7 +10,7 @@
       "INT": 5,
       "CHA": 5
     },
-    "specialAbilities": ["Rapid Healing 1", "Poison Resistance"]
+    "specialAbilities": ["Adaptive Ingenuity", "Jack Of All Trades"]
   },
   {
     "name": "Ogre",
@@ -23,102 +23,109 @@
       "INT": -50,
       "CHA": -50
     },
-    "specialAbilities": ["Stun Resistance", "Infra Vision"]
+    "specialAbilities": ["Stun Resistance", "Aura Of Stench"]
   },
   {
     "name": "Troll",
     "size": "lg",
     "statModifiers": {
-      "STR": 3,
-      "STA": 1,
-      "DEX": -1,
-      "WIS": 0,
-      "INT": -2,
-      "CHA": -1
+      "STR": 25,
+      "STA": 50,
+      "DEX": -20,
+      "WIS": 10,
+      "INT": -20,
+      "CHA": -20
     },
     "specialAbilities": ["Rapid Healing 1", "Poison Resistance"]
   },{
     "name": "Gnome",
     "size": "lg",
     "statModifiers": {
-      "STR": 3,
-      "STA": 1,
-      "DEX": -1,
+      "STR": -10,
+      "STA": -10,
+      "DEX": 20,
       "WIS": 0,
-      "INT": -2,
-      "CHA": -1
-    }
+      "INT": 25,
+      "CHA": 0
+    },
+    "specialAbilities": ["Elemental Attunement", "Sneaky"]
   },
   {
     "name": "Dwarf",
     "size": "lg",
     "statModifiers": {
-      "STR": 3,
-      "STA": 1,
-      "DEX": -1,
-      "WIS": 0,
-      "INT": -2,
-      "CHA": -1
-    }
+      "STR": 20,
+      "STA": 20,
+      "DEX": 20,
+      "WIS": 20,
+      "INT": -30,
+      "CHA": -25
+    },
+    "specialAbilities": ["Magic Resistance", "Stone Skin 1"]
   },
   {
     "name": "Wood Elf",
     "size": "lg",
     "statModifiers": {
-      "STR": 3,
-      "STA": 1,
-      "DEX": -1,
-      "WIS": 0,
-      "INT": -2,
-      "CHA": -1
-    }
+      "STR": -25,
+      "STA": -25,
+      "DEX": 50,
+      "WIS": 20,
+      "INT": 0,
+      "CHA": 0
+    },
+    "specialAbilities": ["Forage", "Spirit Of The Oak"]
   },
   {
     "name": "High Elf",
     "size": "lg",
     "statModifiers": {
-      "STR": 3,
-      "STA": 1,
-      "DEX": -1,
-      "WIS": 0,
-      "INT": -2,
-      "CHA": -1
-    }
+      "STR": -30,
+      "STA": -30,
+      "DEX": 0,
+      "WIS": 15,
+      "INT": 35,
+      "CHA": 35
+    },
+    "specialAbilities": ["Magic Resistance", "Stone Skin 1"]
   },
   {
     "name": "Dark Elf",
     "size": "lg",
     "statModifiers": {
-      "STR": 3,
-      "STA": 1,
-      "DEX": -1,
-      "WIS": 0,
-      "INT": -2,
-      "CHA": -1
-    }
+      "STR": -40,
+      "STA": -35,
+      "DEX": 25,
+      "WIS": 25,
+      "INT": 35,
+      "CHA": 15
+    },
+    "specialAbilities": ["Magic Attuned", "Deception"]
   },
   {
     "name": "Halfling",
     "size": "lg",
     "statModifiers": {
-      "STR": 3,
-      "STA": 1,
-      "DEX": -1,
-      "WIS": 0,
-      "INT": -2,
-      "CHA": -1
-    }
+      "STR": -40,
+      "STA": -40,
+      "DEX": 65,
+      "WIS": 40,
+      "INT": 0,
+      "CHA": 0
+    },
+    "specialAbilities": ["Slippery", "Fear Resistance"]
   },
   {
     "name": "Frostborn",
     "size": "lg",
     "statModifiers": {
-      "STR": 3,
-      "STA": 1,
-      "DEX": -1,
-      "WIS": 0,
-      "INT": -2,
-      "CHA": -1
-    }
+      "STR": 30,
+      "STA": 25,
+      "DEX": 15,
+      "WIS": 15,
+      "INT": -30,
+      "CHA": -30
+    },
+    "specialAbilities": ["Berserk", "Dash"]
   }
 ]

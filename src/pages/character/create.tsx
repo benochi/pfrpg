@@ -31,17 +31,31 @@ const CreateCharacter: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    let newStats = { ...baseStats };
+  
     if (selectedRace) {
-      setStats({
-        STR: baseStats.STR + selectedRace.statModifiers.STR,
-        STA: baseStats.STA + selectedRace.statModifiers.STA,
-        DEX: baseStats.DEX + selectedRace.statModifiers.DEX,
-        WIS: baseStats.WIS + selectedRace.statModifiers.WIS,
-        INT: baseStats.INT + selectedRace.statModifiers.INT,
-        CHA: baseStats.CHA + selectedRace.statModifiers.CHA
-      });
+      newStats = {
+        STR: newStats.STR + selectedRace.statModifiers.STR,
+        STA: newStats.STA + selectedRace.statModifiers.STA,
+        DEX: newStats.DEX + selectedRace.statModifiers.DEX,
+        WIS: newStats.WIS + selectedRace.statModifiers.WIS,
+        INT: newStats.INT + selectedRace.statModifiers.INT,
+        CHA: newStats.CHA + selectedRace.statModifiers.CHA,
+      };
     }
-  }, [selectedRace]);
+  
+    if (selectedClass) {
+      newStats = {
+        STR: newStats.STR + selectedClass.statModifiers.STR,
+        STA: newStats.STA + selectedClass.statModifiers.STA,
+        DEX: newStats.DEX + selectedClass.statModifiers.DEX,
+        WIS: newStats.WIS + selectedClass.statModifiers.WIS,
+        INT: newStats.INT + selectedClass.statModifiers.INT,
+        CHA: newStats.CHA + selectedClass.statModifiers.CHA,
+      };
+    }
+    setStats(newStats);
+  }, [selectedRace, selectedClass]);
 
   const handleRaceSelect = (race: Race) => {
     setSelectedRace(race);

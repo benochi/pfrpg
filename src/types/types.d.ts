@@ -21,4 +21,5 @@ export interface Class {
   name: string;
   specialClasses: string[];
   abilities: Ability;
+  statModifiers: StatModifiers;
 }

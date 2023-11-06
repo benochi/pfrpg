@@ -2,6 +2,14 @@
   {
     "name": "Berserker",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 30,
+      "STA": 30,
+      "DEX": 0,
+      "WIS": -5,
+      "INT": -5,
+      "CHA": 0
+    },
     "abilities": {
       "1": "Rage",
       "5": "Shields",
@@ -11,6 +19,14 @@
   {
     "name": "Warrior",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 25,
+      "STA": 25,
+      "DEX": 15,
+      "WIS": -5,
+      "INT": -5,
+      "CHA": -5
+    },
     "abilities": {
       "1": "Battle Cry",
       "5": "Weapon Mastery",
@@ -18,8 +34,33 @@
     }
   },
   {
+    "name": "Bard",
+    "specialClasses": ["Minstrel", "Troubadour", "Lore Master"],
+    "statModifiers": {
+      "STR": 0,
+      "STA": 5,
+      "DEX": 10,
+      "WIS": 0,
+      "INT": 10,
+      "CHA": 30
+    },
+    "abilities": {
+      "1": "Inspire Courage",
+      "5": "Song of Rest",
+      "10": "Charm Performance"
+    }
+  },
+  {
     "name": "Cleric",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 5,
+      "STA": 5,
+      "DEX": -10,
+      "WIS": 25,
+      "INT": 15,
+      "CHA": 10
+    },
     "abilities": {
       "1": "Heal",
       "5": "Protect",
@@ -29,6 +70,14 @@
   {
     "name": "Wizard",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": -10,
+      "STA": -10,
+      "DEX": -10,
+      "WIS": 0,
+      "INT": 80,
+      "CHA": 0
+    },
     "abilities": {
       "1": "Magic Missile",
       "5": "Ice Bolt",
@@ -38,8 +87,16 @@
   {
     "name": "Magician",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 0,
+      "STA": 0,
+      "DEX": 0,
+      "WIS": 0,
+      "INT": 50,
+      "CHA": 0
+    },
     "abilities": {
-      "1": "Illusion",
+      "1": "Elemental Shield",
       "5": "Phantom Steed",
       "10": "Mirror Image"
     }
@@ -47,6 +104,14 @@
   {
     "name": "Enchanter",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 0,
+      "STA": 0,
+      "DEX": 0,
+      "WIS": 0,
+      "INT": 25,
+      "CHA": 25
+    },
     "abilities": {
       "1": "Charm Person",
       "5": "Enchant Weapon",
@@ -56,6 +121,14 @@
   {
     "name": "Druid",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 0,
+      "STA": 10,
+      "DEX": 10,
+      "WIS": 25,
+      "INT": 0,
+      "CHA": 5
+    },
     "abilities": {
       "1": "Entangle",
       "5": "Shapeshift",
@@ -65,6 +138,14 @@
   {
     "name": "Monk",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 15,
+      "STA": 15,
+      "DEX": 15,
+      "WIS": 5,
+      "INT": 0,
+      "CHA": 0
+    },
     "abilities": {
       "1": "Flurry of Blows",
       "5": "Stunning Strike",
@@ -74,6 +155,14 @@
   {
     "name": "Paladin",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 10,
+      "STA": 10,
+      "DEX": 0,
+      "WIS": 25,
+      "INT": 0,
+      "CHA": 5
+    },
     "abilities": {
       "1": "Divine Smite",
       "5": "Lay on Hands",
@@ -83,6 +172,14 @@
   {
     "name": "Dark Knight",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 10,
+      "STA": 10,
+      "DEX": 0,
+      "WIS": 0,
+      "INT": 25,
+      "CHA": 5
+    },
     "abilities": {
       "1": "Unholy Strength",
       "5": "Fear Aura",
@@ -92,6 +189,14 @@
   {
     "name": "Necromancer",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": -10,
+      "STA": 0,
+      "DEX": 0,
+      "WIS": 0,
+      "INT": 70,
+      "CHA":-10
+    },
     "abilities": {
       "1": "Summon Undead",
       "5": "Life Drain",
@@ -101,6 +206,14 @@
   {
     "name": "Rogue",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 15,
+      "STA": 5,
+      "DEX": 30,
+      "WIS": 0,
+      "INT": 0,
+      "CHA": 0
+    },
     "abilities": {
       "1": "Sneak Attack",
       "5": "Pick Lock",
@@ -110,6 +223,14 @@
   {
     "name": "Ranger",
     "specialClasses": ["Special 1", "Special 2", "Special 3"],
+    "statModifiers": {
+      "STR": 10,
+      "STA": 5,
+      "DEX": 20,
+      "WIS": 10,
+      "INT": 0,
+      "CHA": 5
+    },
     "abilities": {
       "1": "Track",
       "5": "Aim True",
@@ -119,6 +240,14 @@
   {
     "name": "Shaman",
     "specialClasses": ["Elemental Wielder", "Spirit Walker", "Ancestral Guardian"],
+    "statModifiers": {
+      "STR": 0,
+      "STA": 25,
+      "DEX": 0,
+      "WIS": 25,
+      "INT": 0,
+      "CHA": 0
+    },
     "abilities": {
       "1": "Spiritual Insight",
       "5": "Elemental Blast",
