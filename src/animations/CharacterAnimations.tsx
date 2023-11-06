@@ -165,6 +165,30 @@ const MagicianBackground: React.FC = () => {
   );
 };
 
+const EnchanterBackground: React.FC = () => {
+  const enchantingElements = Array.from({ length: 15 }, (_, index) => {
+    const size = Math.random() * (150 - 50) + 50; 
+    const animationDuration = Math.random() * (30 - 15) + 15; 
+    const delay = Math.random() * -10; 
+
+    return (
+      <div
+        key={index}
+        className="enchanting-element"
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          animationDuration: `${animationDuration}s`,
+          animationDelay: `${delay}s`,
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+        }}
+      />
+    );
+  });
+
+  return <div className="enchanter-elements">{enchantingElements}</div>;
+};
 
 
 const CharacterAnimations: React.FC<CharacterAnimationsProps> = ({ className }) => {
@@ -181,6 +205,8 @@ const CharacterAnimations: React.FC<CharacterAnimationsProps> = ({ className }) 
       return <WizardBackground />;
     case 'magician':
       return <MagicianBackground />;
+    case 'enchanter':
+      return <EnchanterBackground />;
     default:
       return null; 
   }

@@ -1,4 +1,3 @@
-/* src/styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +11,21 @@ html,
 body {
   @apply bg-gradient-to-br from-black to-cobalt text-white;
 }
+
+@media (min-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    overflow-y: hidden; 
+  }
+}
+
+@media (max-width: 767px) {
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto; 
+  }
+}
+
 
 /*keyframes */
 @keyframes chaoticMovement {
@@ -71,6 +85,17 @@ body {
   0% { top: 100vh; opacity: 1; }
   50% { opacity: 0.5; }
   100% { top: -150px; opacity: 0; }
+}
+
+@keyframes floatAndGlow {
+  0%, 100% {
+    transform: translateY(-10px) scale(1);
+    box-shadow: 0 0 15px rgba(255, 192, 203, 0.7); 
+  }
+  50% {
+    transform: translateY(10px) scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 192, 203, 0.9); 
+  }
 }
 
 @keyframes floatUpwards {
@@ -166,10 +191,28 @@ body {
   }
 }
 
+@keyframes swirl {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(90deg) translateX(2px) translateY(2px);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) translateX(-2px) translateY(-2px);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(270deg) translateX(-2px) translateY(2px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(2px) translateY(-2px);
+  }
+}
+
+
 .animation-container {
-  overflow: hidden;
   position: relative;
-  z-index: 10;
+  z-index: 0;
   height: 100vh; /* Or adjust as needed */
 }
 
@@ -295,39 +338,66 @@ body {
 
 .element-earth {
   position: absolute;
+  bottom: 0;
   width: 50px; 
   height: 50px;
   background-color: #8B4513;
   border-radius: 50%;
   animation: floatUpwards 10s infinite linear;
+  overflow: hidden;
 }
 
 /* Wind Element Style */
 .element-wind {
   position: absolute;
+  bottom: 0;
   width: 50px;
   height: 50px;
   background-color: #F5F5F5; 
   border-radius: 50%;
   animation: driftAndFade 8s infinite ease-in-out;
+  overflow: hidden;
 }
 
 /* Water Element Style */
 .element-water {
   position: absolute;
+  bottom: 0;
   width: 50px;
   height: 50px;
   background-color: #0000FF; 
   border-radius: 50%;
   animation: rotateAndScale 6s infinite linear;
+  overflow: hidden;
 }
 
 /* Fire Element Style */
 .element-fire {
   position: absolute;
+  bottom: 0;
   width: 50px;
   height: 50px;
   background-color: #FF4500; 
   border-radius: 50%;
   animation: flickerAndAscend 4s infinite ease-in-out;
+  overflow: hidden;
+}
+
+.enchanter-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none; 
+  overflow: hidden;
+}
+
+.enchanting-element {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 192, 203, 0.5); 
+  animation: floatAndGlow 20s infinite alternate, swirl 2s infinite linear;
+  will-change: transform; 
 }
