@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Race, Class, StatModifiers } from '../../types/types';
 import racesData from '../../data/races.json';
 import classesData from '../../data/classes.json';
+import Image from 'next/image';
 
 const baseStats: StatModifiers = {
   STR: 75,
@@ -70,6 +71,13 @@ const CreateCharacter: React.FC = () => {
     setCharacterName(event.target.value);
   };
 
+  const getImagePath = () => {
+    if (selectedRace && selectedClass && gender) {
+      return `/images/characters/${gender}/${selectedRace.name.toLowerCase()}_${selectedClass.name.toLowerCase()}.png`;
+    }
+    return '/images/characters/default.png';
+  };
+
   return (
     <Layout>
       <div className="container mx-auto px-4">
@@ -104,9 +112,17 @@ const CreateCharacter: React.FC = () => {
             </ul>
           </div>
           <div className="lg:w-1/2 w-full flex justify-center items-center">
-            <div className="border-4 border-white w-64 h-64">
-            </div>
-          </div>
+        <div className="border-4 border-white">
+          {/* Responsive image with dynamic source */}
+          <Image
+            src={getImagePath()}
+            alt="Character Image"
+            width={200} // Set the size of your images
+            height={200}
+            layout="responsive" // This makes the image responsive
+          />
+        </div>
+      </div>
         </div>
         <div className="mt-4">
         <h2 className="text-xl font-bold">Character Gender</h2>
