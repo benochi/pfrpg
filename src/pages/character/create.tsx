@@ -81,7 +81,7 @@ const CreateCharacter: React.FC = () => {
 
   return (
     <Layout>
-        <div className="relative z-10">
+        <div className="relative z-10" style={{ height: '100vh' }}>
         {selectedClass && (
           <CharacterAnimations className={selectedClass.name} />
         )}

@@ -7,24 +7,33 @@ type CharacterAnimationsProps = {
 };
 
 const BerserkerBackground: React.FC = () => {
-  const snowflakeCount = 30; 
-  const snowflakes = Array.from({ length: snowflakeCount }, (_, index) => {
-    const style = {
-      left: `${Math.random() * 100}%`,
-      animationDelay: '0s',
-      animationDuration: `${5 + Math.random() * 10}s`, 
-    };
+  const rippleCount = 10; 
+  const ripples = Array.from({ length: rippleCount }, (_, index) => {
+    const size = Math.random() * 100 + 50; 
+    const positionX = Math.random() * 100;
+    const positionY = Math.random() * 100;
+    const delay = Math.random() * -5;
 
     return (
       <div
         key={index}
-        className="snowflake"
-        style={style}
+        className="ripple"
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          top: `calc(${positionY}% - ${size / 2}px)`, 
+          left: `calc(${positionX}% - ${size / 2}px)`, 
+          animationDelay: `${delay}s`
+        }}
       />
     );
   });
 
-  return <>{snowflakes}</>;
+  return (
+    <div className="ripple-container">
+      {ripples}
+    </div>
+  );
 };
 
 const WarriorBackground: React.FC = () => {
