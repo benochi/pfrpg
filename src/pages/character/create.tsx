@@ -81,11 +81,10 @@ const CreateCharacter: React.FC = () => {
 
   return (
     <Layout>
-      {selectedClass && (
-        <div className="fixed inset-0 z-1">
+        <div className="relative z-10">
+        {selectedClass && (
           <CharacterAnimations className={selectedClass.name} />
-        </div>
-      )}
+        )}
       <div className="container mx-auto px-4 z-10 relative">
         <h1 className="text-2xl font-bold text-center my-4">Create Your Character</h1>
         <div className="flex flex-col lg:flex-row gap-4">
@@ -192,6 +191,7 @@ const CreateCharacter: React.FC = () => {
             </button>
           </Link>
         </div>
+      </div>
       </div>
     </Layout>
   );

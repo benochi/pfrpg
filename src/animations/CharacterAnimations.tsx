@@ -48,12 +48,10 @@ const WarriorBackground: React.FC = () => {
   return <>{snowflakes}</>;
 };
 
-// You can define other class background components here...
 
 const CharacterAnimations: React.FC<CharacterAnimationsProps> = ({ className }) => {
   switch (className.toLowerCase()) {
     case 'berserker':
-      console.log("BERSERKER!")
       return <BerserkerBackground />;
     case 'warrior':
       return <WarriorBackground />;
