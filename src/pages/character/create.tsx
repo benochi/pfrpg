@@ -5,6 +5,7 @@ import { Race, Class, StatModifiers } from '../../types/types';
 import racesData from '../../data/races.json';
 import classesData from '../../data/classes.json';
 import Image from 'next/image';
+import CharacterAnimations from '../../animations/CharacterAnimations';
 
 const baseStats: StatModifiers = {
   STR: 75,
@@ -80,7 +81,12 @@ const CreateCharacter: React.FC = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4">
+      {selectedClass && (
+        <div className="fixed inset-0 z-1">
+          <CharacterAnimations className={selectedClass.name} />
+        </div>
+      )}
+      <div className="container mx-auto px-4 z-10 relative">
         <h1 className="text-2xl font-bold text-center my-4">Create Your Character</h1>
         <div className="flex flex-col lg:flex-row gap-4">
           <div className="lg:w-1/4 w-full overflow-auto">
@@ -88,9 +94,9 @@ const CreateCharacter: React.FC = () => {
             <ul>
               {races.map((race, index) => (
                 <li 
-                key={index}
-                className={`my-2 cursor-pointer ${selectedRace?.name === race.name ? highlightColor : ''}`}
-                onClick={() => handleRaceSelect(race)}
+                  key={index}
+                  className={`my-2 cursor-pointer ${selectedRace?.name === race.name ? highlightColor : ''}`}
+                  onClick={() => handleRaceSelect(race)}
                 >
                   {race.name}
                 </li>
@@ -102,30 +108,29 @@ const CreateCharacter: React.FC = () => {
             <ul>
               {classes.map((cls, index) => (
                 <li
-                key={index}
-                className={`my-2 cursor-pointer ${selectedClass?.name === cls.name ? highlightColor : ''}`}
-                onClick={() => handleClassSelect(cls)}
-              >
-                {cls.name}
-              </li>
+                  key={index}
+                  className={`my-2 cursor-pointer ${selectedClass?.name === cls.name ? highlightColor : ''}`}
+                  onClick={() => handleClassSelect(cls)}
+                >
+                  {cls.name}
+                </li>
               ))}
             </ul>
           </div>
           <div className="lg:w-1/2 w-full flex justify-center items-center">
-        <div className="border-4 border-white">
-          {/* Responsive image with dynamic source */}
-          <Image
-            src={getImagePath()}
-            alt="Character Image"
-            width={200} // Set the size of your images
-            height={200}
-            layout="responsive" // This makes the image responsive
-          />
-        </div>
-      </div>
+            <div className="border-4 border-white">
+              <Image
+                src={getImagePath()}
+                alt="Character Image"
+                width={200} 
+                height={200}
+                priority
+              />
+            </div>
+          </div>
         </div>
         <div className="mt-4">
-        <h2 className="text-xl font-bold">Character Gender</h2>
+          <h2 className="text-xl font-bold">Character Gender</h2>
           <div className="flex gap-4 justify-center items-center">
             <label className="flex items-center space-x-2">
               <input
@@ -166,22 +171,21 @@ const CreateCharacter: React.FC = () => {
               Character Name
             </label>
             <input
-            type="text"
-            id="characterName"
-            value={characterName}
-            onChange={handleCharacterNameChange}
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm text-black px-2"
-            placeholder="Enter your character's name"
-          />
+              type="text"
+              id="characterName"
+              value={characterName}
+              onChange={handleCharacterNameChange}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm text-black px-2"
+              placeholder="Enter your character's name"
+            />
           </div>
           {characterName && selectedRace && selectedClass && (
-          <div className="text-center my-4">
-            <p className="text-white">
-              {characterName} the {selectedRace.name} {selectedClass.name}
-            </p>
-          </div>
-        )}
-
+            <div className="text-center my-4">
+              <p className="text-white">
+                {characterName} the {selectedRace.name} {selectedClass.name}
+              </p>
+            </div>
+          )}
           <Link href="/character/confirm" passHref>
             <button className="bg-cobalt hover:bg-cobalt-dark text-white font-bold py-2 px-4 rounded-lg border-4 border-white transition ease-in duration-200 transform hover:-translate-y-1 hover:scale-110">
               CREATE CHARACTER
@@ -191,6 +195,6 @@ const CreateCharacter: React.FC = () => {
       </div>
     </Layout>
   );
-};
+}  
 
 export default CreateCharacter;
